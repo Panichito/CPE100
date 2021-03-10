@@ -12,24 +12,24 @@ EXECUTABLES=userinterface
 
 all : $(EXECUTABLES)
 
-datefunctions.o : datefunctions.c datefunctions.h
-	gcc -c datefunctions.c
+dateFunctions.o : dateFunctions.c dateFunctions.h
+	gcc -c dateFunctions.c
 
-validatefunctions.o : validatefunctions.c datefunctions.h validatefunctions.h
-	gcc -c validatefunctions.c
+validateFunctions.o : validateFunctions.c dateFunctions.h validateFunctions.h
+	gcc -c validateFunctions.c
 
-hotelfunctions.o : hotelfunctions.c validatefunctions.h hotelfunctions.h
-	gcc -c hotelfunctions.c
+HotelFunctions.o : HotelFunctions.c validateFunctions.h HotelFunctions.h
+	gcc -c HotelFunctions.c
 
-userinterface.o : userinterface.c hotelfunctions.h
-	gcc -c userinterface.c
+UserInterface.o : UserInterface.c HotelFunctions.h
+	gcc -c UserInterface.c
 
-userinterface : userinterface.o hotelfunctions.o validatefunctions.o datefunctions.o
-	gcc -o userinterface userinterface.o hotelfunctions.o validatefunctions.o datefunctions.o
+UserInterface : UserInterface.o HotelFunctions.o validateFunctions.o dateFunctions.o
+	gcc -o UserInterface UserInterface.o HotelFunctions.o validateFunctions.o dateFunctions.o
 
 clean : 
 	-rm *.o
-	-rm datefunctions
-	-rm validatefunctions
-	-rm hotelfunctions
-	-rm userinterface
+	-rm dateFunctions
+	-rm validateFunctions
+	-rm HotelFunctions
+	-rm UserInterface
