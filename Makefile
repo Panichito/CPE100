@@ -1,14 +1,12 @@
-# This makefile is intended to build the two test programs for
-# CPE100 Project2 Thai Hotel Database System
+# This makefile is intended to build the two test programs for CPE100 Project2 Thai Hotel Database System
 # makefile
 #
-# Note that this makefile assumes a Linux environment. The executables
-# have no extension.
+# Note that this makefile assumes a Linux environment. The executables have no extension.
 #
 # Panithi Suwanno 63070503426 (Big) 15 NOV 2020
 #  
 
-EXECUTABLES=userinterface
+EXECUTABLES=UserInterface
 
 all : $(EXECUTABLES)
 
